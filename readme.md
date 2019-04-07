@@ -20,3 +20,5 @@ Create script.js file
 ### 6. map to render each task and Props - To edit and delete tasks
 
 ### 7. Add Task
+
+### 8. 1) Making tasks draggable and 2) Loading default tasks from api

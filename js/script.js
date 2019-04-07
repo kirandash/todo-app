@@ -3,6 +3,10 @@ var ToDo = React.createClass({
         // Allows us to set a default state for our node
         return {editing: false} // Initially we want the default card 
     },
+    componentDidMount: function(){
+        // Immediately after our component is rendered - Create draggable items of todo with jQuery UI
+        $(this.getDOMNode()).draggable();
+    },
     render: function() {
         if(this.state.editing){
             // On clicking edit render the form
@@ -50,12 +54,19 @@ var ToDo = React.createClass({
 var ToDoList = React.createClass({
     getInitialState: function(){
         return {
-            tasks: [
-                'Attend morning stand up calls',
-                'Push code to production',
-                'Attend evening meetings',
-                'Go Gym'
-            ]
+            tasks: []
+        }
+    },
+    componentWillMount: function(){
+        var self = this;
+        if(this.props.count){
+            // jQuery getJSON to get JSON from an api
+            $.getJSON("http://baconipsum.com/api/?type=all-meat&sentences=" + this.props.count + "&start-with-lorem=1&callback=?", function(results){
+                // Callback fn
+                results[0].split('. ').forEach(function(sentence){
+                    self.addToList(sentence.substring(0, 40));
+                })
+            });
         }
     },
     addToList: function(newText){
@@ -76,7 +87,7 @@ var ToDoList = React.createClass({
     eachTask: function(task, i){
         // Each tasks moved from render to a new function to keep render function simpler with less code
         return (
-            <ToDo key={i} index={i} onEdit={this.editList} onDelete={this.deleteFromList}>{task}</ToDo>
+            <ToDo index={i} onEdit={this.editList} onDelete={this.deleteFromList}>{task}</ToDo>
         );
     },
     render: function() {
