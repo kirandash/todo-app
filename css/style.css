@@ -1,0 +1,74 @@
+body,
+html,
+div.todo-list,
+div#react-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #a52a2a;
+    font-family: cursive;
+}
+
+.app-title {
+    margin: 0;
+    padding: 10px;
+    color: white;
+}
+
+div.todo-list {
+    width: 100%;
+}
+
+div.todo {
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+    margin: 20px 25px;
+    position: absolute;
+    cursor: -webkit-grab;
+    -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
+    float: left;
+    padding: 10px;
+    text-align: center;
+}
+
+div.todo:active {
+    cursor: -webkit-grabbing;
+}
+
+div.todo h3 {
+    font-size: 20px;
+    padding: 5px;
+}
+
+div.todo:hover > span {
+    opacity: 1;
+}
+
+div.todo > span {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    opacity: 0;
+    transition: opacity .25s linear;
+}
+
+div.todo button {
+    margin: 2px;
+}
+
+div.todo > textarea {
+    height: 75%;
+    background: rgba(255, 255, 255, .5);
+}
+
+.glyphicon-plus {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
