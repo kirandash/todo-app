@@ -58,6 +58,11 @@ var ToDoList = React.createClass({
             ]
         }
     },
+    addToList: function(newText){
+        var tasksArr = this.state.tasks;
+        tasksArr.push(newText); // Updating the item at i index
+        this.setState({tasks: tasksArr}); // Updating the existing tasks list
+    },
     editList: function(newText, i){
         var tasksArr = this.state.tasks;
         tasksArr[i] = newText; // Updating the item at i index
@@ -78,8 +83,9 @@ var ToDoList = React.createClass({
         return (
             <div className="todo-list">
                 {this.state.tasks.map(this.eachTask)}
+                <button className="btn btn-sm btn-success glyphicon glyphicon-plus" onClick={this.addToList.bind(null, "New Task")}></button> 
             </div>
-        )
+        ) /* The bind event is to pass default placeholder for the first time we add a task */
     }
 });
 

@@ -18,3 +18,5 @@ Create script.js file
 ### 5. Setting todo tasks inside todo list
 
 ### 6. map to render each task and Props - To edit and delete tasks
+
+### 7. Add Task
