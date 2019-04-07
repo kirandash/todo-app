@@ -4,7 +4,9 @@
 
 React is a JavaScript framework created by Facebook to help web developers build single page applications quickly. In this tutorial we are going to create a full stack to do or task manager application from scratch with react.
 
-### 2. Project Setup
+### 1.1 Project Setup & Creating React TO DO Component
 Create index.html file
 Create css files
 Create script.js file
+
+### 2. Adding State - Initial, Edit and save
