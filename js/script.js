@@ -46,10 +46,24 @@ var ToDo = React.createClass({
 
 // Create List of TO DO tasks
 var ToDoList = React.createClass({
+    getInitialState: function(){
+        return {
+            tasks: [
+                'Attend morning stand up calls',
+                'Push code to production',
+                'Attend evening meetings',
+                'Go Gym'
+            ]
+        }
+    },
     render: function() {
         return (
             <div className="todo-list">
-                {this.props.count}
+                {this.state.tasks.map(function(task, i){
+                    return (
+                        <ToDo key={i}>{task}</ToDo>
+                    );
+                })}
             </div>
         )
     }

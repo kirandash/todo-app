@@ -14,3 +14,5 @@ Create script.js file
 ### 3. Save value of textarea with helf of refs
 
 ### 4. Creating a to do list with prop count
+
+### 5. Setting todo tasks inside todo list
