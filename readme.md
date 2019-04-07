@@ -10,3 +10,6 @@ Create css files
 Create script.js file
 
 ### 2. Adding State - Initial, Edit and save
+
+### 3. Save value of textarea with helf of refs
+

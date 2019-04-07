@@ -24,7 +24,7 @@ var ToDo = React.createClass({displayName: "ToDo",
     renderEditCard: function() {
         return (
             React.createElement("div", {className: "todo"}, 
-                React.createElement("textarea", {defaultValue: this.props.children, className: "form-control"}), 
+                React.createElement("textarea", {defaultValue: this.props.children, ref: "savedText", className: "form-control"}), 
                 React.createElement("button", {className: "btn btn-success btn-sm glyphicon glyphicon-floppy-disk", onClick: this.save})
             )
         )
@@ -35,6 +35,8 @@ var ToDo = React.createClass({displayName: "ToDo",
     },
     save: function() {
         console.log('Task saved');
+        var txt = this.refs.savedText.getDOMNode().value;
+        console.log('The saved text is ' + txt);
         this.setState({editing: false});
     },
     delete: function() {
