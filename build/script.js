@@ -37,10 +37,12 @@ var ToDo = React.createClass({displayName: "ToDo",
         console.log('Task saved');
         var txt = this.refs.savedText.getDOMNode().value;
         console.log('The saved text is ' + txt);
+        this.props.onEdit(this.refs.savedText.getDOMNode().value, this.props.index); // Call onEdit event from TODOList
         this.setState({editing: false});
     },
     delete: function() {
         console.log('Task deleted!');
+        this.props.onDelete(this.props.index); // Call onDelete event from TODOList
     }
 });
 
@@ -56,14 +58,26 @@ var ToDoList = React.createClass({displayName: "ToDoList",
             ]
         }
     },
+    editList: function(newText, i){
+        var tasksArr = this.state.tasks;
+        tasksArr[i] = newText; // Updating the item at i index
+        this.setState({tasks: tasksArr}); // Updating the existing tasks list
+    },
+    deleteFromList: function(i){
+        var tasksArr = this.state.tasks;
+        tasksArr.splice(i, 1); // Deleting an item from index i
+        this.setState({tasks: tasksArr}); // Updating the existing tasks list
+    },
+    eachTask: function(task, i){
+        // Each tasks moved from render to a new function to keep render function simpler with less code
+        return (
+            React.createElement(ToDo, {key: i, index: i, onEdit: this.editList, onDelete: this.deleteFromList}, task)
+        );
+    },
     render: function() {
         return (
             React.createElement("div", {className: "todo-list"}, 
-                this.state.tasks.map(function(task, i){
-                    return (
-                        React.createElement(ToDo, {key: i}, task)
-                    );
-                })
+                this.state.tasks.map(this.eachTask)
             )
         )
     }
