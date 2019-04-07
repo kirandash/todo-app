@@ -1,0 +1,22 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "React is a JavaScript framework created by Facebook to help web developers build single page applications quickly. In this tutorial we are going to create a full stack to do or task manager application from scratch with react.",
+  "main": "index.js",
+  "scripts": {
+    "start": "open http://localhost:9099 & httpster -p 9099"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirandash/todo-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirandash/todo-app/issues"
+  },
+  "homepage": "https://github.com/kirandash/todo-app#readme",
+  "dependencies": {
+    "httpster": "^1.0.4"
+  }
+}

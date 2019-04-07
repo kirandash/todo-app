@@ -1,0 +1,1 @@
+React.render(<ToDoList count={10}/>, document.getElementById('react-component'));

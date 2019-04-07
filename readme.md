@@ -9,6 +9,10 @@ Create index.html file
 Create css files
 Create script.js file
 
+### 1.2 Compiling JSX Files with react tools
+npm install -g react-tools or npm init and npm install --save react-tools
+jsx js/ build/
+
 ### 2. Adding State - Initial, Edit and save
 
 ### 3. Save value of textarea with helf of refs
@@ -22,3 +26,9 @@ Create script.js file
 ### 7. Add Task
 
 ### 8. 1) Making tasks draggable and 2) Loading default tasks from api
+
+### 9. Hosting our app with npm and httpster
+npm init
+npm install --save httpster 
+jsx js/ build/
+npm start

@@ -24,9 +24,9 @@ div.todo-list {
 }
 
 div.todo {
-    height: 200px;
-    width: 200px;
-    background-color: yellow;
+    height: 94px;
+    width: 430px;
+    background-color: #ffe000;
     margin: 20px 25px;
     cursor: -webkit-grab;
     -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
@@ -41,8 +41,9 @@ div.todo:active {
 }
 
 div.todo h3 {
-    font-size: 20px;
+    font-size: 16px;
     padding: 5px;
+    margin: 0 0 5px 0;
 }
 
 div.todo:hover > span {
@@ -62,8 +63,10 @@ div.todo button {
 }
 
 div.todo > textarea {
-    height: 75%;
+    height: 50%;
     background: rgba(255, 255, 255, .5);
+    margin: 0 0 5px 0;
+    text-align: center;
 }
 
 .glyphicon-plus {
