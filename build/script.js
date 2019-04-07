@@ -44,4 +44,15 @@ var ToDo = React.createClass({displayName: "ToDo",
     }
 });
 
-React.render(React.createElement(ToDo, null, "To do task"), document.getElementById('react-component'));
+// Create List of TO DO tasks
+var ToDoList = React.createClass({displayName: "ToDoList",
+    render: function() {
+        return (
+            React.createElement("div", {className: "todo-list"}, 
+                this.props.count
+            )
+        )
+    }
+});
+
+React.render(React.createElement(ToDoList, {count: 10}), document.getElementById('react-component'));
